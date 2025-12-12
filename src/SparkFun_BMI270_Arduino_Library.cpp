@@ -1363,5 +1363,5 @@ float BMI270::convertRawToDegSecScalar(uint8_t gyrRange)
     // BMI2_GYR_RANGE_500   | 500
     // BMI2_GYR_RANGE_250   | 250
     // BMI2_GYR_RANGE_125   | 125
-    return ((125 * (1 << (BMI2_GYR_RANGE_125 - gyrRange))) / 32768.0);
+    return (2000 >> gyrRange) / 32768.0;
 }
